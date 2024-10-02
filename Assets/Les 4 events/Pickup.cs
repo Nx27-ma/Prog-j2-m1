@@ -8,34 +8,27 @@ using Random = UnityEngine.Random;
 
 public class Pickup : MonoBehaviour
 {
-    private int layermasked;
-    private RaycastHit hit;
     private bool pickuptouch;
+    GameObject player;
+
     void Start(){
-        layermasked = LayerMask.GetMask(new string[] {"Player"});
-    }
-
-    // private void OnDrawGizmos()
-    // {
-    //     Gizmos.DrawSphere(transform.position, 2f);
-    // }
-
-    // Update is called once per frame
-
-    private void FixedUpdate()
-    {
-        pickuptouch = Physics.SphereCast(transform.position, 6f, Vector3.fwd, out hit, 0.1f, layermasked);
+        player = GameObject.FindWithTag("Player");
     }
 
     void Update()
     {
-        
-        
+
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.5)
+        {
+            pickuptouch = true;
+        }
+        else
+        {
+            pickuptouch = false;
+        }
+
         if (pickuptouch)
         {
-            
-            Debug.Log("pickup   "); 
-            Debug.Log(hit.collider.gameObject.name);
             Canvass.Uevent(Random.Range(0, 3));
             Destroy(gameObject);
         }
