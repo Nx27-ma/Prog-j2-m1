@@ -10,6 +10,7 @@ public class Pickup : MonoBehaviour
 {
     private bool pickuptouch;
     GameObject player;
+     public static event action Action<int> Uevent;
 
     void Start(){
         player = GameObject.FindWithTag("Player");
