@@ -20,17 +20,8 @@ public class Pickup : MonoBehaviour
 
         if (Vector3.Distance(transform.position, player.transform.position) < 1.5)
         {
-            pickuptouch = true;
-        }
-        else
-        {
-            pickuptouch = false;
-        }
-
-        if (pickuptouch)
-        {
-        Uevent?.Invoke(Random.Range(0, 3));
-            Destroy(gameObject);
+             Uevent?.Invoke(Random.Range(0, 3));
+             Destroy(gameObject);
         }
         
     }
