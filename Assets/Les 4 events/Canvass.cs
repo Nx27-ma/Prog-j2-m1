@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class Canvass : MonoBehaviour
 {
     int score = 0;
-    private TMP_Text text;
+    private TMP_Text text;  
+    public static event action Action<int> Uevent;
    
     void Start()
     {
