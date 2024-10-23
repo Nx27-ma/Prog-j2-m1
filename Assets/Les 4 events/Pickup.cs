@@ -29,6 +29,7 @@ public class Pickup : MonoBehaviour
 
         if (pickuptouch)
         {
+        Uevent?.Invoke(Random.Range(0, 3));
             Destroy(gameObject);
         }
         
