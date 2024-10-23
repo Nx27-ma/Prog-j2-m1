@@ -29,7 +29,6 @@ public class Pickup : MonoBehaviour
 
         if (pickuptouch)
         {
-            Canvass.Uevent(Random.Range(0, 3));
             Destroy(gameObject);
         }
         
