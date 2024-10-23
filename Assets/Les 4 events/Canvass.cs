@@ -9,7 +9,7 @@ public class Canvass : MonoBehaviour
 {
     int score = 0;
     private TMP_Text text;
-    public static action Action<int> Uevent;
+   
     void Start()
     {
         text = transform.GetChild(0).GetComponent<TMP_Text>();
